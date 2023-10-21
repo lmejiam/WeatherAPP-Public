@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>WeatherApp</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js" defer=""></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>WeatherApp</h1>
+                <form action="" id="form">
+                    <label for="citysearch">Type City</label>
+                    <input type="text" id="citysearch" placeholder="e.g. Seattle" onsubmit="getTemps(this.value)">
+                    <input type="button" value="Search" class = "searchbutton" onclick="getCity()">
+                </form>
+                <ul class="cities">
+                    <li onmouseover="changeColor(this,'black')"  onmouseout="changeColor(this, 'white')" onclick="findCoordinates('Seattle')">Seattle</li>
+                    <li onmouseover="changeColor(this,'black')"  onmouseout="changeColor(this, 'white')" onclick="findCoordinates('San Pedro Sula')">San Pedro Sula</li>
+                    <li onmouseover="changeColor(this,'black')"  onmouseout="changeColor(this, 'white')" onclick="findCoordinates('Anchorage')">Anchorage</li>
+                </ul>
+            </div>
+            <div class="body">
+                <div class="title">
+                    <h2 class="city"></h2>
+                    <div class="temp">
+                        <p>show temperature in</p>
+                        <select name="tempformat" onchange="changeUnits(this)">
+                            <option value="f">°F</option>
+                            <option value="c">°C</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="days">
+                        <div class="day">
+                            <h2>Today</h2>
+                            <div class="pictoday">
+                            </div>    
+                            <p id="todayweather">some rain</p>
+                            <div class="actualtemps">
+                                <span class="high" id="todayhigh"></span>
+                                <span class="low" id="todaylow"></span>
+                            </div>
+                        </div>
+                        <div class="day">
+                            <h2>Tomorrow</h2>
+                            <div class="pictomorrow">
+                            </div>
+                            <p id="tomorrowweather">some rain</p>
+                            <div class="actualtemps">
+                                <span class="high" id="tomorrowhigh"></span>
+                                <span class="low" id="tomorrowlow"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+</body>
+
+
+</html>
